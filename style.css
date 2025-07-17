@@ -1,0 +1,191 @@
+
+body {
+  background: url('https://i.imgur.com/V8v6L3k.jpg') center/cover no-repeat fixed;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff300;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.pokeball {
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  border: 10px solid #000;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.pokeball::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, #e60012, #a80000);
+  border-top-left-radius: 125px;
+  border-top-right-radius: 125px;
+  border-bottom: 5px solid black;
+  box-sizing: border-box;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  margin-top: 30px;
+}
+
+.button button {
+  margin: 5px;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #0077b6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  background: #023e8a;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border: 10px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: black;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+.mode {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #fefefe;
+  background: rgba(0,0,0,0.3);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.battle-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind everything */
+  pointer-events: none;
+}
+
+.pokemon {
+  position: absolute;
+  width: 120px;
+  image-rendering: pixelated;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.pokemon.right {
+  transform: scaleX(-1);
+}
+
+.battle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.poke-info {
+  position: absolute;
+  width: 150px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  color: white;
+  text-align: left;
+}
+
+.left-info {
+  bottom: 42%;
+  left: 3%;
+}
+
+.right-info {
+  top: 8%;
+  right: 3%;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.hp-bar {
+  background: #ccc;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hp-fill {
+  background-color: #2ecc71;
+  height: 100%;
+  transition: width 0.5s;
+}
+
+.battle-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #0d6efd 50%, #dc3545 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pokemon {
+  position: absolute;
+  width: 180px; /* increased size */
+  image-rendering: pixelated;
+  animation: float 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.pokemon.right {
+  transform: scaleX(-1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

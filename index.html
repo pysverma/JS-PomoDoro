@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PokeTimer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <h1>PokéTimer</h1>
+ <!-- Overlay: Names and Health Bars -->
+<div class="battle-overlay">
+  <!-- Left Team Info -->
+  <div class="poke-info" style="bottom: 52%; left: 5%;">
+    <div class="name">Pikachu</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 90%;"></div></div>
+  </div>
+  <div class="poke-info" style="bottom: 37%; left: 9%;">
+    <div class="name">Dragonite</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 85%;"></div></div>
+  </div>
+  <div class="poke-info" style="bottom: 22%; left: 7%;">
+    <div class="name">Alakazam</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 80%;"></div></div>
+  </div>
+
+  <!-- Right Team Info -->
+  <div class="poke-info" style="top: 22%; right: 5%;">
+    <div class="name">Gengar</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 75%; background-color: #e63946;"></div></div>
+  </div>
+  <div class="poke-info" style="top: 36%; right: 9%;">
+    <div class="name">Charizard</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 80%; background-color: #f77f00;"></div></div>
+  </div>
+  <div class="poke-info" style="top: 50%; right: 7%;">
+    <div class="name">Greninja</div>
+    <div class="hp-bar"><div class="hp-fill" style="width: 70%; background-color: #48cae4;"></div></div>
+  </div>
+</div>
+  <!-- Energy Ball Attack -->
+  <div class="energy-ball" id="energyBall"></div>
+</div>
+
+
+<!-- Pokémon Battle Scene -->
+<div class="battle-scene">
+  <!-- Left Side Pokémon -->
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" class="pokemon left" style="bottom: 25%; left: 4%;">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png" alt="Dragonite" class="pokemon left" style="bottom: 15%; left: 8%;">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" alt="Alakazam" class="pokemon left" style="bottom: 5%; left: 6%;">
+
+  <!-- Right Side Pokémon -->
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" alt="Gengar" class="pokemon right" style="top: 20%; right: 4%;">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="Charizard" class="pokemon right" style="top: 30%; right: 8%;">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png" alt="Greninja" class="pokemon right" style="top: 40%; right: 6%;">
+</div>
+
+
+
+  <div class="pokeball">
+    <div class="center-circle" id="timer">25:00</div>
+  </div>
+  <div class="mode" id="mode">Focus Mode</div>
+
+  <div class="button">
+    <button onclick="startTimer()">Start</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+
+  <!-- Sound Effect -->
+  <audio id="battle-music">
+  <source src="./audio/pokeball opening sound FX.mp3" type="audio/mpeg">
+</audio>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
